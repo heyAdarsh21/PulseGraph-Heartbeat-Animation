@@ -1,0 +1,38 @@
+# Algorithm:
+1. Setup your x-values
+Purpose: Define the domain of the function where the expression under the square root √(3 − x²) is real.
+Why: The domain is limited to " " because beyond that, the square root becomes imaginary.
+How:
+Create x_right for positive side of x
+Create x_left for negative side by reversing -x_right
+Concatenate both to get full x_full
+2. Prepare the plot
+Purpose: Set up the visual environment.
+Steps:
+Create a figure and axis using plt.subplots()
+Set up x and y limits
+Draw a grid and axes
+Add an empty line plot (line, = ax.plot(...)) for animation
+Add title, aspect ratio, etc.
+3. Define the initial function
+Purpose: Provide a clean slate before animation starts.
+How:
+def init():
+    line.set_data([], [])
+    return line,
+4. Define the animation function
+Purpose: This is where magic happens for each frame.
+What it does:
+Takes in a value of k (changes from 0 to 100 over time)
+Calculates y_right using the function's equation on the positive x
+Calculates y_left for negative x
+Concatenates both y_left and y_right into y_full
+Updates the line data
+5. Create the animation
+Purpose: Animate the function by varying k.
+How:
+Use FuncAnimation from matplotlib.animation
+Set frames=np.linspace(0, 100, 200) so k goes smoothly from 0 to 100
+Call animate(k) for each frame
+Use interval=50 to control speed
+6. Show the animation: plt.show()

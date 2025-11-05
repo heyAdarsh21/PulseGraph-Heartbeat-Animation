@@ -16,7 +16,7 @@ ax.set_aspect('equal')
 ax.grid(True)
 ax.axhline(0, color='black', linewidth=0.5)
 ax.axvline(0, color='black', linewidth=0.5)
-ax.set_title('Heart Of Glass', fontsize=14)
+ax.set_title('PulseGraph', fontsize=14)
 
 def init():
     line.set_data([], [])
@@ -36,5 +36,6 @@ ani = FuncAnimation(
     blit=True,
     interval=50
 )
+
 
 plt.show()
